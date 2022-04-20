@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modelo CocoSsd</title>
+    <!-- Load TensorFlow.js. This is required to use coco-ssd model. -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <!-- Load the coco-ssd model. -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+  </head>
+  <body>
+    <div id="estado"></div>
+    <br />
+    <br />
+    <div id="previsualizarImagen"></div>
+    <input type="file" id="cargarImagen" />
+    <br />
+    <br />
+    <input type="button" id="predecir" value="Predecir" />
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
