@@ -6,6 +6,7 @@ const previsualizarImagen = document.getElementById('previsualizarImagen');
 const cagarImagen = document.getElementById('cargarImagen');
 const estado = document.getElementById('estado');
 const predecir = document.getElementById('predecir');
+const resultado = document.getElementById('resultado');
 
 // funcion para cargar el modelo de cocossd
 document.addEventListener('DOMContentLoaded', async () => {
@@ -44,7 +45,13 @@ cagarImagen.addEventListener('change', async function (e) {
 // funcion para predecir la imagen
 predecir.addEventListener('click', async () => {
   const result = await modelo.detect(document.getElementById('imagen'));
-  console.log(result);
+  console.log(result[0].class);
+
+  resultado.innerHTML = `
+  <div class="mt-3 alert alert-success">
+    Resultado: ${result[0].class} <br> Probabilidad: ${result[0].score}
+  </div>
+  `;
 });
 
 // funcion para cargar el modelo
